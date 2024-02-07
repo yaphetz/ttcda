@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="song-list">
+        <mat-selection-list [multiple]="false">
+            @for (song of songs$| async; track song) {
+            <mat-list-option (click)="play(song)">{{song}}</mat-list-option>
+            }
+        </mat-selection-list>
+    </div>
+
+    <div class="video-section"></div>
+    <!-- <input #input (change)="sendMessage(input.value)"> -->
+
+
+    <div class="media-controls">
+        <i class="fa-solid fa-backward-step"></i>
+        <i (click)="play(currentSong?? '')" class="fa-solid fa-play"></i>
+        <i class="fa-solid fa-forward-step"></i>
+    </div>
+
+</div>

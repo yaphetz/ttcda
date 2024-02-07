@@ -1,0 +1,31 @@
+.container {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 5rem;
+    background-color: #162D32;
+}
+
+.media-controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+
+    >i {
+        font-size: 2rem;
+        color: white;
+    }
+}
+
+:host {
+    --mdc-list-list-item-label-text-color: white;
+
+    ::ng-deep {
+        mat-list-option .mdc-list-item__end {
+            display: none;
+        }
+        mat-list-option[aria-selected=true] {
+            background-color: lightseagreen;
+        }
+    }
+}
